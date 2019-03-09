@@ -23,4 +23,4 @@ $ go-curl -f <url>
 
 ## License
 
-MIT.
+MIT. See `LICENSE` in this repository.
