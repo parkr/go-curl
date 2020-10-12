@@ -26,7 +26,6 @@ archives:
     files:
       - LICENSE
       - README.md
-      - CHANGELOG.md
 
 env:
   - GO111MODULE=on
