@@ -1,0 +1,16 @@
+# GoReleaser configuration
+
+builds:
+  - binary: go-curl
+    main: cmd/go-curl/main.go
+    ldflags: '-s -w -X main.buildVersion={{.Version}} -X main.buildTime={{.Date}}'
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm
+      - arm64
+    env:
+      - CGO_ENABLED=0
