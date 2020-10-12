@@ -6,11 +6,18 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
+const buildVersion = "dev"
+const buildTime = "<missing build time>"
 const expectedStatusCode = 200
 
 func main() {
+	flag.Usage = func() {
+		fmt.Fprintf(flag.CommandLine.Output(), "Usage of %s: (version %s, built on %s)\n", os.Args[0], buildVersion, buildTime)
+		flag.PrintDefaults()
+	}
 	var fail bool
 	flag.BoolVar(&fail, "f", false, "Fail on non-200 response")
 	flag.Parse()
