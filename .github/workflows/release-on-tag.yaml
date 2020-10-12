@@ -3,6 +3,7 @@ name: goreleaser
 on:
   push:
     tags: ['*']
+    branches: ['github-actions']
 
 jobs:
   goreleaser:
